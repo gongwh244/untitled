@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import math
+
 #001
 '''
 arr = [1,2,3,4]
@@ -44,3 +46,14 @@ print "净利润：%.5f"%retur
 '''
 
 #003
+
+#题目：一个整数，它加上100和加上268后都是一个完全平方数，请问该数是多少？
+
+for num in range(10000):
+    i = math.sqrt(num + 100)
+    j = math.sqrt(num + 268)
+    if(j == int(j)) and (i == int(i)):
+        print i
+        print j
+        print num
+        break
