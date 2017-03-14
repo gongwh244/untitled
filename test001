@@ -1,7 +1,5 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-import testEveryDay001
-import time
-import calendar
-
+#import testEveryDay001
+import test100problem
