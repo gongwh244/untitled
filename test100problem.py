@@ -48,7 +48,7 @@ print "净利润：%.5f"%retur
 #003
 
 #题目：一个整数，它加上100和加上268后都是一个完全平方数，请问该数是多少？
-
+'''
 for num in range(10000):
     i = math.sqrt(num + 100)
     j = math.sqrt(num + 268)
@@ -57,3 +57,92 @@ for num in range(10000):
         print j
         print num
         break
+'''
+
+#004
+#输入某年某月某日，判断这一天是这一年的第几天？
+'''
+def isYun(year):
+    #2月闰年29 平年28
+    if(year % 4 == 0):
+        return True
+    else:
+        return False
+def daysFromMouth(year,mouth):
+    if(mouth == 1 or mouth == 3 or mouth == 5 or mouth == 7 or mouth == 8 or mouth == 10 or mouth == 12):
+        return 31
+    elif(mouth == 4 or mouth == 6 or mouth == 9 or mouth == 11):
+        return 30
+    else:
+        if(isYun(year)):
+            return 29
+        else:
+            return 28
+year = eval(raw_input("请输入年"))
+if(year <= 0):
+    print "年输入错误"
+    exit()
+
+mouth = eval(raw_input("请输入月"))
+if(mouth <= 0 or mouth > 12):
+    print "月输入错误"
+    exit()
+
+day = eval(raw_input("请输入日"))
+if(day <= 0 or day > 31):
+    print "日输入错误"
+    exit()
+
+num = 0
+for index in range(1,mouth):
+    num += daysFromMouth(year,mouth)
+num += day
+print "这是%d年第%d天"%(year,num)
+'''
+
+#005
+#输入三个整数x,y,z，请把这三个数由小到大输出
+'''
+arr = []
+for index in range(3):
+    tmp = eval(raw_input("int:"))
+    arr.append(tmp)
+arr.sort(reverse=False)#递增
+print arr
+arr.sort(reverse=True)#递减
+print arr
+'''
+
+#006
+#斐波那契数列
+
+'''
+#fun1
+
+def fibonacci_List(index):
+    if(index == 0 or index == 1):
+        return 1
+    else:
+        return fibonacci_List(index-1) + fibonacci_List(index-2)
+list = []
+for index in range(10):
+    list.append(fibonacci_List(index))
+print list
+'''
+
+'''
+#fun2
+
+list = [1,1]
+for index in range(2,10):
+    list.append(list[index -1] + list[index -2])
+print list
+'''
+
+
+
+
+
+
+
+
